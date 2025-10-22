@@ -1,0 +1,11 @@
+# Django migrations
+*/migrations/*
+!*/migrations/__init__.py
+
+# SQLite database
+db.sqlite3
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyc
