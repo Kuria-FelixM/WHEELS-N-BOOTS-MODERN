@@ -9,3 +9,7 @@ db.sqlite3
 __pycache__/
 *.py[cod]
 *.pyc
+*.env
+env
+.env
+AUTOMATED_MESSAGING_GUIDE.md
