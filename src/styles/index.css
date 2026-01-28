@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'ZuumeRough';
+  src: url('/fonts/FontsFree-Net-zuumerough-regular-2.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ZuumeRoughbold';
+  src: url('/fonts/FontsFree-Net-zuumerough-bold-2.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('/fonts/FontsFree-Net-Lora-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(117, 117, 117, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4E342E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D84315;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Remove transition from certain elements */
+.no-transition {
+  @apply !transition-none;
+}
+
+/* Mobile touch optimization */
+@media (hover: none) and (pointer: coarse) {
+  button, a {
+    @apply active:scale-95;
+  }
+}
+/* Override text-decoration-none */
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+/* Custom styling for links */
+a {
+  @apply text-decoration-none;
+}
+
+/* Ensure icons render properly */
+i[class^="fa-"] {
+  @apply mr-1;
+}
+
+/* Hero section should NOT have sidebar margin */
+section:has(> div > h1),
+[class*="HeroSection"] {
+  @apply w-full ml-0 !important;
+}
+
+/* Ensure proper sidebar behavior */
+@media (max-width: 767px) {
+  section {
+    @apply ml-0;
+  }
+}
