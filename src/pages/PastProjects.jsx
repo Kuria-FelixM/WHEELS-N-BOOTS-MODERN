@@ -64,7 +64,7 @@ export default function PastProjects() {
       {/* Quote Section */}
       <section className="py-12 md:py-20 px-4 md:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-zuumebold text-2xl md:text-3xl text-primary text-center">
+          <h2 className="text-2xl md:text-3xl text-primary text-center">
             "<span className="font-zuumebold">This has been a dream come true to climb a 8000er old school.</span>"
           </h2>
         </div>
@@ -92,7 +92,7 @@ export default function PastProjects() {
                       <h4 className="font-zuumebold text-primary text-2xl text-center md:text-left mb-4">
                         {expedition.title}
                       </h4>
-                      <p className="text-secondary leading-relaxed text-center md:text-left">
+                      <p className="font-lora text-secondary leading-relaxed text-center md:text-left">
                         {expedition.description}
                       </p>
                     </div>

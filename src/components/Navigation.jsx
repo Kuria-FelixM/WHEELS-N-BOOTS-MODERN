@@ -28,7 +28,7 @@ const menuItems = [
   {
     label: 'Press',
     submenu: [
-      { label: 'Mountain Stories', href: '/press' },
+      { label: 'Mountain Stories', href: '/blog' },
       { label: 'Featured', href: '/press' },
     ],
   },

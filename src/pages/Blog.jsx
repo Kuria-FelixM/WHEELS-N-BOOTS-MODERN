@@ -4,7 +4,7 @@ export default function Blog() {
   const stories = [
     {
       id: 1,
-      title: 'Kairitu ka Dundori A girl from Dundori, The 90\'s girl',
+      title: 'Kairitu ka Dundori A girl from Dundori, The 90s girl',
       image: '/img/mtkenya.jpg',
       excerpt: 'This was my first time climbing Mt. Meru (4,566M a.s.l). I did not give much thought to her or the challenge of exploring her. I thought she would be modest and kind. At least not arrogant. With the experience I had, I thought it would require minimum effort to convince her I am good people. It was also sort of a blind date with little information, but I knew she was shorter than some of my previous acquaintances.',
     },

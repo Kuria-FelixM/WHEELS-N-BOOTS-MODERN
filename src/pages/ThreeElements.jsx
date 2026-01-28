@@ -11,7 +11,7 @@ export default function ThreeElements() {
 
       {/* Main Section */}
       <section className="py-12 md:py-20 w-full md:pl-[20%]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-zuumebold text-clamp-h1 text-center mb-8 text-primary">
             The Three Elements
           </h1>

@@ -12,11 +12,11 @@ export default function Press() {
       {/* Press Section */}
       <section className="max-w-6xl mx-auto md:mx-0 px-4 sm:px-6 lg:px-8 py-12 md:py-20 w-full md:pl-[20%]">
         <h2 className="font-zuumebold text-clamp-h2 mb-12 text-primary text-center">
-          Featured Press & Media
+          Featured Press and Media
         </h2>
 
         {/* First Feature */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16 items-center">
+        <div className="grid md:grid-cols-2 gap-8 mb-16 items-center text-center">
           <div>
             <h3 className="font-zuumebold text-clamp-h3 mb-4 text-primary">
               Salmon Three Route Challenge
@@ -51,7 +51,7 @@ export default function Press() {
               allowFullScreen
             />
           </div>
-          <div className="order-1 md:order-2">
+          <div className="order-1 md:order-2 text-center">
             <h3 className="font-zuumebold text-clamp-h3 mb-4 text-primary">
               Conquering Mountains
             </h3>
@@ -75,7 +75,7 @@ export default function Press() {
               allowFullScreen
             />
           </div>
-          <div>
+          <div className="text-center">
             <h3 className="font-zuumebold text-clamp-h3 mb-4 text-primary">
               Kenyan Ultra Runners Hit Five Peaks in a Week
             </h3>
@@ -89,7 +89,7 @@ export default function Press() {
         </div>
 
         {/* Fourth Feature */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16 items-center">
+        <div className="grid md:grid-cols-2 gap-8 mb-16 items-center text-center">
           <div className="order-2 md:order-1">
             <h3 className="font-zuumebold text-clamp-h3 mb-4 text-primary">
               Lifestyle: Never Stop Climbing

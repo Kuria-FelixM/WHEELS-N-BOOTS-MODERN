@@ -15,8 +15,8 @@ export default function MtKenya() {
   return (
     <div>
       <HeroSection 
-        title="Mount Kenya Guided Tours"
-        backgroundImage="/img/mtkenya.jpg"
+        
+        backgroundImage="/img/IMG_20230914_122033.jpg"
         logo="/img/logo.png"
       />
 
@@ -58,44 +58,14 @@ export default function MtKenya() {
       {/* Main Content Section */}
       <section className="max-w-4xl mx-auto md:mx-0 px-4 sm:px-6 lg:px-8 py-12 md:py-20 w-full md:pl-[20%]">
         <h2 className="font-zuumebold text-clamp-h2 text-primary mb-6">
-          Conquer East Africa's Iconic Peak
+          Conquer East Africa Iconic Peak
         </h2>
         
         <p className="text-lg text-secondary mb-6 leading-relaxed font-lora">
           Mount Kenya stands as the second-highest peak in Africa at 5,199 meters (17,057 feet). Our expertly guided tours offer a once-in-a-lifetime opportunity to summit this majestic mountain while learning about the diverse ecosystems and local cultures of Kenya.
         </p>
 
-        <div className="bg-light p-8 rounded-lg mb-8 border-l-4 border-primary">
-          <h3 className="font-zuumebold text-primary text-xl mb-4">
-            Tour Highlights
-          </h3>
-          <ul className="space-y-3 font-lora text-secondary">
-            <li className="flex items-start">
-              <span className="text-primary mr-3 font-bold">•</span>
-              <span>Expert guidance from experienced Kenyan mountaineers</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-3 font-bold">•</span>
-              <span>Multiple route options (Point Lenana, Nelion, and Batian)</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-3 font-bold">•</span>
-              <span>Acclimatization programs to ensure safety and success</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-3 font-bold">•</span>
-              <span>All-inclusive packages with meals and accommodation</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-3 font-bold">•</span>
-              <span>Photography opportunities at spectacular vantage points</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-3 font-bold">•</span>
-              <span>Suitable for all fitness levels</span>
-            </li>
-          </ul>
-        </div>
+        
 
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           <img 
