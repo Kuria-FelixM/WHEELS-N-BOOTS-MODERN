@@ -4,31 +4,15 @@ export default function Blog() {
   const stories = [
     {
       id: 1,
-      title: 'Manaslu Summit - The Dream Realized',
-      date: 'September 24, 2023',
-      excerpt: 'Becoming the first Africans to summit an 8000m peak without supplemental oxygen...',
-      image: '/img/manaslu.jpg',
+      title: 'Kairitu ka Dundori A girl from Dundori, The 90\'s girl',
+      image: '/img/mtkenya.jpg',
+      excerpt: 'This was my first time climbing Mt. Meru (4,566M a.s.l). I did not give much thought to her or the challenge of exploring her. I thought she would be modest and kind. At least not arrogant. With the experience I had, I thought it would require minimum effort to convince her I am good people. It was also sort of a blind date with little information, but I knew she was shorter than some of my previous acquaintances.',
     },
     {
       id: 2,
-      title: 'Ama Dablam: The Mountain That Tests You',
-      date: 'April 2021',
-      excerpt: 'One of the most technically challenging mountains in the Himalayas and the peak that changed my journey...',
-      image: '/img/amadablam.jpg',
-    },
-    {
-      id: 3,
-      title: 'Lenin Peak: First Kenyan on a 7000M Peak',
-      date: 'July 2018',
-      excerpt: 'Becoming the first Kenyan to summit a 7000M peak and joining the Snow Leopard Award club...',
-      image: '/img/heerro.jpg',
-    },
-    {
-      id: 4,
-      title: 'Khan Tengri: The Northern Challenge',
-      date: 'August 2019',
-      excerpt: 'The world\'s most northern 7000M peak and the toughest climbing season due to severe weather...',
-      image: '/img/khantegri.jpg',
+      title: 'Summiting 5 East African peaks',
+      image: '/img/IMG_3619_(1).jpg',
+      excerpt: 'Summiting 5 East African peaks in 6 days (Rwenzori, Margherita Peak - Uganda, Mt. Muhavura - Uganda, Mt. Kenya, Mt. Meru - Tanzania and Mt. Kilimanjaro). Only taking short naps in between traveling from one mountain to the other, while at times using public transport, this is the most intensive and physically demanding challenge so far.',
     },
   ]
 
@@ -40,40 +24,34 @@ export default function Blog() {
         logo="/img/logo.png"
       />
 
-      <section className="max-w-6xl mx-auto md:mx-0 px-4 sm:px-6 lg:px-8 py-12 md:py-20 w-full md:pl-[20%]">
-        <h2 className="font-zuumebold text-clamp-h2 mb-12 text-primary text-center">
-          Featured Stories
-        </h2>
-        
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          {stories.map((story) => (
-            <article 
-              key={story.id} 
-              className="group hover:shadow-lg transition-shadow rounded-lg overflow-hidden"
-            >
-              <div className="h-64 overflow-hidden rounded-lg mb-4">
+      <section className="py-12 md:py-20 px-4 md:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-zuumebold text-clamp-h2 text-primary text-center mb-4">
+            Blogs
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {stories.map((story) => (
+              <div key={story.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                 <img
                   src={story.image}
                   alt={story.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-64 object-cover"
                 />
+                <div className="p-6 text-center">
+                  <h3 className="font-zuumebold text-primary text-lg mb-3 line-clamp-2">
+                    {story.title}
+                  </h3>
+                  <p className="text-secondary text-sm leading-relaxed mb-6">
+                    {story.excerpt}
+                  </p>
+                  <button className="bg-dark text-white font-zuumebold py-2 px-6 rounded-lg hover:bg-primary transition-colors">
+                    Read More
+                  </button>
+                </div>
               </div>
-              <div>
-                <p className="font-lora text-sm text-secondary mb-2">
-                  {story.date}
-                </p>
-                <h3 className="font-zuumebold text-clamp-h3 text-primary mb-3">
-                  {story.title}
-                </h3>
-                <p className="font-lora text-clamp-p-sm text-gray-700 mb-4">
-                  {story.excerpt}
-                </p>
-                <button className="font-zuumebold text-dark hover:text-primary transition-colors">
-                  Read Full Story →
-                </button>
-              </div>
-            </article>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     </div>

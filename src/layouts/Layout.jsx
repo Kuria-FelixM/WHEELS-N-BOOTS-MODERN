@@ -27,9 +27,9 @@ export default function Layout({ children }) {
         aria-label="Toggle navigation"
       >
         {sidenavOpen ? (
-          <X size={28} className="text-primary" />
+          <X size={36} className="text-primary" />
         ) : (
-          <Menu size={28} className="text-primary" />
+          <Menu size={36} className="text-primary" />
         )}
       </button>
 

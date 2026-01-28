@@ -151,7 +151,7 @@ export default function Navigation({ isOpen, onClose }) {
                 <>
                   <button
                     onClick={() => handleMenuToggle(item.label)}
-                    className="w-full flex items-center justify-center px-3 py-2 rounded-lg hover:bg-accent text-primary font-zuumebold text-center"
+                    className="w-full flex flex-col items-center justify-center px-3 py-2 rounded-lg hover:bg-accent text-primary font-zuumebold text-center"
                   >
                     <span>{item.label}</span>
                     <ChevronDown

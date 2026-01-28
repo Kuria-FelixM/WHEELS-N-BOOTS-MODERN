@@ -1,23 +1,28 @@
 import HeroSection from '../components/HeroSection'
-import Card from '../components/Card'
 import { Link } from 'react-router-dom'
 
 export default function UpcomingProjects() {
-  const upcomingProjects = [
+  const upcomingExpeditions = [
     {
-      title: 'Kilimanjaro Expedition 2026',
-      description: 'Multi-day expedition to Tanzania\'s highest peak with comprehensive training and unforgettable experiences.',
-      image: '/img/amadablam.jpg',
+      title: 'Tour of the Stans',
+      image: '/img/stans.jpg',
+      description: 'A tour of Central Asian countries ending with the suffix \'stan\'. They were once part of the Soviet Union. James\'s plan is to explore these far lands by use of motorcycle. Starting from Dubai, UAE then crossing by boat to Iran. The ride will go through Turkmenistan, Uzbekistan, Kazakhstan, Krygzstan, Tajikistan, Afghanistan and finally Pakistan. While exploring these vast lands, James will climb selected mountains along the way. Notably, Mt. Damavand in Iran (5609M), Somoni (Communism)(7495 m) and Korzhenevskaya (7105 m) peaks in Tajikistan. The last 2 peaks are part of the snow Leopard peaks. This tour is set to begin on 1st June 2025 and expected to last for two and a half months. Partnership opportunities are available.',
+      imagePosition: 'left',
+      hasPartnership: true,
     },
     {
-      title: 'Adventure Leadership Summit',
-      description: 'International conference bringing together adventure professionals, guides, and enthusiasts.',
-      image: '/img/khantegri.jpg',
+      title: 'County tour',
+      image: '/img/county.jpeg',
+      description: 'Motorcycle ride around each of the 47 counties in Kenya, highlighting each county\'s uniqueness while exploring trails. Details coming soon. Partnership opportunities are available.',
+      imagePosition: 'right',
+      hasPartnership: true,
     },
     {
-      title: 'Documentary Series',
-      description: 'Production of adventure travel documentary series showcasing African expeditions and cultural experiences.',
-      image: '/img/run.jpg',
+      title: 'K2, The Ultimate Challenge',
+      image: '/img/k2.jpg',
+      description: 'It has been James\'s dream to attempt a summit of K2. Soon, the attempt will be made. Details coming soon. Partnership opportunities are available.',
+      imagePosition: 'left',
+      hasPartnership: true,
     },
   ]
 
@@ -29,18 +34,80 @@ export default function UpcomingProjects() {
         logo="/img/logo.png"
       />
 
-      <section className="bg-accent py-12 md:py-20 md:w-[80%] md:ml-[20%]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12">
-            {upcomingProjects.map((project, idx) => (
-              <Card key={idx} {...project} />
-            ))}
-          </div>
+      {/* Quote Section */}
+      <section className="py-12 md:py-20 px-4 md:px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-zuumebold text-2xl md:text-3xl text-primary text-center">
+            "<span className="font-zuumebold">Life is one big adventure. You have one shot. Take it</span>!"
+          </h2>
+        </div>
+      </section>
 
-          <div className="text-center mt-12">
-            <Link to="/past-projects" className="text-primary font-zuumebold hover:text-dark transition-colors">
-              ← View Past Projects
-            </Link>
+      {/* Expeditions Section */}
+      <section className="py-12 md:py-20 px-4 md:px-8 bg-accent">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-zuumebold text-clamp-h2 text-primary text-center mb-12">
+            Upcoming Expeditions
+          </h2>
+
+          <div className="space-y-12">
+            {upcomingExpeditions.map((expedition, idx) => (
+              <div key={idx} className="grid md:grid-cols-2 gap-6 items-center">
+                {expedition.imagePosition === 'left' ? (
+                  <>
+                    <img
+                      src={expedition.image}
+                      alt={expedition.title}
+                      className="w-full h-64 object-cover rounded-lg shadow-lg"
+                    />
+                    <div>
+                      <h4 className="font-zuumebold text-primary text-2xl text-center md:text-left mb-4">
+                        {expedition.title}
+                      </h4>
+                      <p className="text-secondary leading-relaxed text-center md:text-left mb-6">
+                        {expedition.description}
+                      </p>
+                      {expedition.hasPartnership && (
+                        <div className="text-center md:text-left">
+                          <Link
+                            to="/contact?type=general"
+                            className="inline-block bg-dark text-white font-zuumebold py-2 px-6 rounded-lg hover:bg-primary transition-colors"
+                          >
+                            Partner with Us
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div>
+                      <h4 className="font-zuumebold text-primary text-2xl text-center md:text-left mb-4">
+                        {expedition.title}
+                      </h4>
+                      <p className="text-secondary leading-relaxed text-center md:text-left mb-6">
+                        {expedition.description}
+                      </p>
+                      {expedition.hasPartnership && (
+                        <div className="text-center md:text-left">
+                          <Link
+                            to="/contact?type=general"
+                            className="inline-block bg-dark text-white font-zuumebold py-2 px-6 rounded-lg hover:bg-primary transition-colors"
+                          >
+                            Partner with Us
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                    <img
+                      src={expedition.image}
+                      alt={expedition.title}
+                      className="w-full h-64 object-cover rounded-lg shadow-lg"
+                    />
+                  </>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
