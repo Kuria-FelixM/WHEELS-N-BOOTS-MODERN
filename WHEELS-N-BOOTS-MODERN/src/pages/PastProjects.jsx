@@ -29,7 +29,7 @@ export default function PastProjects() {
         logo="/img/logo.png"
       />
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 md:w-[80%] md:ml-auto">
+      <section className="max-w-7xl mx-auto md:mx-0 px-4 sm:px-6 lg:px-8 py-12 md:py-20 w-full md:pl-[20%]">
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-20">
           {pastProjects.map((project, idx) => (
             <Card key={idx} {...project} />

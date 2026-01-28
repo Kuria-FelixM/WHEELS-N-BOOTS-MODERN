@@ -44,7 +44,7 @@ export default function GearRoom() {
         logo="/img/logo.png"
       />
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 md:w-[80%] md:ml-auto">
+      <section className="max-w-7xl mx-auto md:mx-0 px-4 sm:px-6 lg:px-8 py-12 md:py-20 w-full md:pl-[20%]">
         <h2 className="font-zuumebold text-clamp-h2 text-primary mb-6 text-center">
           Premium Adventure Gear
         </h2>

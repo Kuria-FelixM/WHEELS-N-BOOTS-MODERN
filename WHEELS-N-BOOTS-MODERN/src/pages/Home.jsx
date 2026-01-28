@@ -17,7 +17,7 @@ export default function Home() {
       />
 
       {/* Partners Section */}
-      <section className="py-12 md:py-20 md:w-[80%] md:ml-auto">
+      <section className="py-12 md:py-20 w-full md:pl-[20%]">
         <h2 className="font-zuumebold text-clamp-h2 text-center mb-12 text-primary">
           Our Partners
         </h2>

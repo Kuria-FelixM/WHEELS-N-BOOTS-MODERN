@@ -10,7 +10,7 @@ export default function About() {
       />
 
       {/* Quote Section */}
-      <section className=" py-12 md:py-20 md:w-[80%] md:ml-auto">
+      <section className="py-12 md:py-20 w-full md:pl-[20%]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-zuumebold text-clamp-h3 mb-4 text-primary">
             I am haunted by my future goals, not my past failures. I am haunted by what i may still become. I am haunted by my own continued thirst for evolution. It is a lifelong quest for more knowledge, more courage, more humility and more belief.
@@ -22,7 +22,7 @@ export default function About() {
       </section>
 
       {/* James Muhia Bio Section */}
-      <section className="py-12 md:py-20 md:w-[80%] md:ml-auto">
+      <section className="py-12 md:py-20 w-full md:pl-[20%]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-zuumebold text-clamp-h1 text-center mb-8 text-primary">
             James Muhia

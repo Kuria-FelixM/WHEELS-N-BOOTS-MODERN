@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <>
       {/* Contact Section - 80% width on desktop */}
-      <section className="w-full bg-white md:w-[80%] md:ml-auto">
+      <section className="w-full bg-white md:pl-[20%]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           {/* Footer Content */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">

@@ -29,7 +29,7 @@ export default function UpcomingProjects() {
         logo="/img/logo.png"
       />
 
-      <section className="bg-accent py-12 md:py-20 md:w-[80%] md:ml-auto">
+      <section className="bg-accent py-12 md:py-20 md:w-[80%] md:ml-[20%]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12">
             {upcomingProjects.map((project, idx) => (

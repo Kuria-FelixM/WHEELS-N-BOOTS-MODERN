@@ -11,7 +11,7 @@ export default function MtKenya() {
         logo="/img/logo.png"
       />
 
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 md:w-[80%] md:ml-auto">
+      <section className="max-w-4xl mx-auto md:mx-0 px-4 sm:px-6 lg:px-8 py-12 md:py-20 w-full md:pl-[20%]">
         <h2 className="font-zuumebold text-clamp-h2 text-primary mb-6">
           Conquer East Africa's Iconic Peak
         </h2>

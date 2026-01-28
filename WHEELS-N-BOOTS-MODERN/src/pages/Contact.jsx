@@ -35,7 +35,7 @@ export default function Contact() {
         logo="/img/logo.png"
       />
 
-      <section className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 md:w-[80%] md:ml-auto">
+      <section className="max-w-2xl mx-auto md:mx-0 px-4 sm:px-6 lg:px-8 py-12 md:py-20 w-full md:pl-[20%]">
         {submitted && (
           <div className="mb-6 p-4 bg-green-100 text-green-800 rounded-lg">
             Thank you! Your message has been sent successfully.
