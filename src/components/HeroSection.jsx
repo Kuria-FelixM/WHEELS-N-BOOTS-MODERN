@@ -14,13 +14,13 @@ export default function HeroSection({ title, subtitle, backgroundImage, children
           <img
             src={logo}
             alt="Logo"
-            className="w-[20vw] h-auto"
+            className="w-[40vw] md:w-[20vw] h-auto"
           />
         </Link>
       )}
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 py-8 max-w-4xl">
+      <div className="relative z-10 text-center px-6 sm:px-8 md:px-4 py-8 max-w-4xl">
         {title && (
           <h1 className="font-zuumebold text-clamp-h1 text-primary mb-4">
             {title}

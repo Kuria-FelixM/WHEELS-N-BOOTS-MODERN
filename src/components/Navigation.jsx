@@ -88,7 +88,7 @@ export default function Navigation({ isOpen, onClose }) {
               >
                 {item.submenu ? (
                   <button
-                    className="w-full flex items-center justify-between px-3 py-3 rounded-lg text-primary font-zuumebold text-3xl hover:text-dark transition-colors"
+                    className="w-full flex items-center justify-between px-3 py-4 rounded-lg text-primary font-zuumebold text-2xl md:text-4xl hover:text-dark transition-colors h-full"
                   >
                     <span>{item.label}</span>
                     <ChevronDown
@@ -102,7 +102,7 @@ export default function Navigation({ isOpen, onClose }) {
                 ) : (
                   <Link
                     to={item.href}
-                    className="block px-3 py-3 rounded-lg text-primary font-zuumebold text-3xl hover:text-dark transition-colors"
+                    className="block px-3 py-4 rounded-lg text-primary font-zuumebold text-2xl md:text-4xl hover:text-dark transition-colors h-full flex items-center"
                   >
                     {item.label}
                   </Link>
@@ -139,7 +139,7 @@ export default function Navigation({ isOpen, onClose }) {
       {/* Mobile Sidebar */}
       <nav
         className={clsx(
-          'fixed top-0 left-0 h-screen w-[190px] bg-white/80 backdrop-blur-sm z-20 px-4 py-6 overflow-y-auto transition-transform duration-300',
+          'fixed top-0 left-0 h-screen w-[190px] bg-white/70 backdrop-blur-sm z-20 px-6 sm:px-8 py-6 overflow-y-auto transition-transform duration-300',
           'md:hidden',
           isOpen ? 'translate-x-0' : '-translate-x-full'
         )}
@@ -151,7 +151,7 @@ export default function Navigation({ isOpen, onClose }) {
                 <>
                   <button
                     onClick={() => handleMenuToggle(item.label)}
-                    className="w-full flex items-center justify-between px-3 py-2 rounded-lg hover:bg-accent text-primary font-zuumebold"
+                    className="w-full flex items-center justify-center px-3 py-2 rounded-lg hover:bg-accent text-primary font-zuumebold text-center"
                   >
                     <span>{item.label}</span>
                     <ChevronDown
@@ -183,7 +183,7 @@ export default function Navigation({ isOpen, onClose }) {
                 <Link
                   to={item.href}
                   onClick={onClose}
-                  className="block px-3 py-2 rounded-lg hover:bg-accent text-primary font-zuumebold"
+                  className="block px-3 py-2 rounded-lg hover:bg-accent text-primary font-zuumebold text-center"
                 >
                   {item.label}
                 </Link>
