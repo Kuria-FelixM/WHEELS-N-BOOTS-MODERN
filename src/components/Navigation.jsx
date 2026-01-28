@@ -144,46 +144,30 @@ export default function Navigation({ isOpen, onClose }) {
           isOpen ? 'translate-x-0' : '-translate-x-full'
         )}
       >
-        <div className="space-y-1">
+        <div className="space-y-1 relative">
           {menuItems.map((item) => (
-            <div key={item.label}>
+            <div key={item.label} className="relative">
               {item.submenu ? (
                 <>
                   <button
                     onClick={() => handleMenuToggle(item.label)}
-                    className="w-full flex flex-col items-center justify-center px-3 py-2 rounded-lg hover:bg-accent text-primary font-zuumebold text-center"
+                    className="w-full flex flex-col items-center justify-center px-3 my-8 py-0 rounded-lg hover:bg-accent text-2xl text-primary font-zuumebold text-center"
                   >
                     <span>{item.label}</span>
                     <ChevronDown
                       size={16}
                       className={clsx(
                         'transition-transform',
-                        openMenu === item.label && 'rotate-180'
+                        openMenu === item.label && 'rotate-90'
                       )}
                     />
                   </button>
-
-                  {/* Mobile Submenu */}
-                  {openMenu === item.label && (
-                    <div className="ml-4 space-y-1">
-                      {item.submenu.map((subitem) => (
-                        <Link
-                          key={subitem.label}
-                          to={subitem.href}
-                          onClick={onClose}
-                          className="block px-3 py-2 rounded-lg hover:bg-accent text-secondary text-sm"
-                        >
-                          {subitem.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
                 </>
               ) : (
                 <Link
                   to={item.href}
                   onClick={onClose}
-                  className="block px-3 py-2 rounded-lg hover:bg-accent text-primary font-zuumebold text-center"
+                  className="block px-3 py-2 rounded-lg hover:bg-accent text-primary text-2xl font-zuumebold text-center"
                 >
                   {item.label}
                 </Link>
@@ -192,6 +176,52 @@ export default function Navigation({ isOpen, onClose }) {
           ))}
         </div>
       </nav>
+
+      {/* Mobile Submenu - rendered outside nav container to avoid overflow issues */}
+      {openMenu && (
+        <>
+          {/* Backdrop overlay - covers entire screen, closes everything when clicked */}
+          <div 
+            className="fixed inset-0 bg-black/40 z-30 md:hidden"
+            onClick={() => {
+              setOpenMenu(null)
+              onClose()
+            }}
+          />
+          {/* Submenu panel - appears to the right of sidebar with fixed width */}
+          <div 
+            className="fixed top-0 left-[190px] bg-white shadow-2xl z-40 overflow-y-auto overflow-x-hidden md:hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-3 space-y-1 w-max">
+              <button
+                onClick={() => setOpenMenu(null)}
+                className="mb-3 text-primary font-zuumebold text-xs w-full text-left flex items-center gap-1 px-3 py-2"
+              >
+                ← Back
+              </button>
+              <h4 className="text-primary font-zuumebold text-xs px-3 py-2">
+                {openMenu}
+              </h4>
+              {menuItems
+                .find(item => item.label === openMenu)
+                ?.submenu.map((subitem) => (
+                  <Link
+                    key={subitem.label}
+                    to={subitem.href}
+                    onClick={() => {
+                      setOpenMenu(null)
+                      onClose()
+                    }}
+                    className="block px-3 py-2 rounded-lg hover:bg-accent text-primary font-lora text-xs font-semibold"
+                  >
+                    {subitem.label}
+                  </Link>
+                ))}
+            </div>
+          </div>
+        </>
+      )}
     </>
   )
 }

@@ -1,39 +1,39 @@
+import { useState } from 'react'
 import HeroSection from '../components/HeroSection'
-import Card from '../components/Card'
-import Button from '../components/Button'
 
 export default function GearRoom() {
-  const gearCategories = [
+  const [expandedAccordion, setExpandedAccordion] = useState(null)
+
+  const gearItems = [
     {
+      id: 'climbing',
       title: 'Climbing Gear',
-      description: 'Professional-grade climbing equipment for all skill levels, from beginner to advanced mountaineers.',
-      image: '/img/khantegri.jpg',
+      description: 'Designed for safety, durability, and performance.',
     },
     {
-      title: 'Hiking Essentials',
-      description: 'Durable and lightweight hiking boots, backpacks, and accessories for trail adventures.',
-      image: '/img/run.jpg',
+      id: 'running',
+      title: 'Running Gear',
+      description: 'Running Gear designed for speed, agility, and endurance.',
     },
     {
-      title: 'Adventure Apparel',
-      description: 'Weather-resistant clothing and protective gear designed for outdoor expeditions.',
-      image: '/img/potrait_abtt.jpg',
+      id: 'riding',
+      title: 'Riding',
+      description: 'Designed for protection, comfort, and performance, this gear enhances every journey.',
     },
     {
-      title: 'Camping Equipment',
-      description: 'Tents, sleeping bags, and camping gear for comfortable nights in the wilderness.',
-      image: '/img/amadablam.jpg',
+      id: 'firstaid',
+      title: 'First Aid Kit',
+      description: 'A well-stocked First Aid Kit is essential for outdoor adventures, ensuring readiness for any situation.',
     },
-    {
-      title: 'Safety Equipment',
-      description: 'First aid kits, emergency supplies, and safety devices for every adventure.',
-      image: '/img/mt-kenyaa.jpg',
-    },
-    {
-      title: 'Navigation Tools',
-      description: 'Compasses, GPS devices, and maps to ensure you stay on the right path.',
-      image: '/img/mtkenya.jpg',
-    },
+  ]
+
+  const whyChooseUs = [
+    'Tested and trusted by professional guides and adventurers',
+    'High-quality brands that last through multiple expeditions',
+    'Expert advice and personalized recommendations',
+    'Competitive pricing with rental and purchase options',
+    'Maintenance and repair services available',
+    'Lifetime support and warranty on selected items',
   ]
 
   return (
@@ -45,56 +45,71 @@ export default function GearRoom() {
       />
 
       <section className="max-w-7xl mx-auto md:mx-0 px-4 sm:px-6 lg:px-8 py-12 md:py-20 w-full md:pl-[20%]">
-        <h2 className="font-zuumebold text-clamp-h2 text-primary mb-6 text-center">
-          Premium Adventure Gear
-        </h2>
-        
-        <p className="text-lg text-secondary mb-12 text-center max-w-2xl mx-auto leading-relaxed font-lora">
-          Gear up for your next adventure with our carefully curated selection of adventure equipment. Each item is tested and approved by our team of experienced adventurers.
-        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          {/* Left side - Image */}
+          <div className="flex items-center justify-center">
+            <img 
+              src="/img/gear.jpg" 
+              alt="Muhia's Favourite Gear" 
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+              style={{ maxHeight: '70vh' }}
+            />
+          </div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-16">
-          {gearCategories.map((category, idx) => (
-            <Card key={idx} {...category} />
-          ))}
+          {/* Right side - Accordion */}
+          <div>
+            <h3 className="font-zuumebold text-primary text-2xl md:text-3xl mb-6">
+              Muhia's Favourite Gear
+            </h3>
+
+            <div className="space-y-2">
+              {gearItems.map((item) => (
+                <div 
+                  key={item.id}
+                  className="border border-gray-300 rounded-lg overflow-hidden"
+                >
+                  <button
+                    onClick={() => setExpandedAccordion(
+                      expandedAccordion === item.id ? null : item.id
+                    )}
+                    className="w-full flex items-center justify-between px-4 py-3 bg-light hover:bg-gray-100 transition-colors text-left"
+                  >
+                    <h4 className="font-zuumebold text-primary text-lg">
+                      {item.title}
+                    </h4>
+                    <span className={`text-primary text-xl transition-transform ${
+                      expandedAccordion === item.id ? 'rotate-180' : ''
+                    }`}>
+                      ▼
+                    </span>
+                  </button>
+
+                  {expandedAccordion === item.id && (
+                    <div className="px-4 py-4 bg-white border-t border-gray-300">
+                      <p className="font-lora text-secondary">
+                        {item.description}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="bg-light p-8 rounded-lg border-l-4 border-primary mb-12">
-          <h3 className="font-zuumebold text-primary text-xl mb-4">
+        {/* Why Choose Us Section */}
+        <div className="bg-light p-8 rounded-lg border-l-4 border-primary mt-16">
+          <h3 className="font-zuumebold text-primary text-2xl md:text-3xl mb-6">
             Why Choose Our Gear?
           </h3>
           <ul className="space-y-3 font-lora text-secondary">
-            <li className="flex items-start">
-              <span className="text-primary mr-3 font-bold">•</span>
-              <span>Tested and trusted by professional guides and adventurers</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-3 font-bold">•</span>
-              <span>High-quality brands that last through multiple expeditions</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-3 font-bold">•</span>
-              <span>Expert advice and personalized recommendations</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-3 font-bold">•</span>
-              <span>Competitive pricing with rental and purchase options</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-3 font-bold">•</span>
-              <span>Maintenance and repair services available</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary mr-3 font-bold">•</span>
-              <span>Lifetime support and warranty on selected items</span>
-            </li>
+            {whyChooseUs.map((item, idx) => (
+              <li key={idx} className="flex items-start">
+                <span className="text-primary mr-3 font-bold text-lg">•</span>
+                <span className="pt-0.5">{item}</span>
+              </li>
+            ))}
           </ul>
-        </div>
-
-        <div className="text-center">
-          <Button size="lg">
-            Browse Full Catalog
-          </Button>
         </div>
       </section>
     </div>
